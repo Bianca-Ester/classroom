@@ -42,8 +42,7 @@ class JanelaLogin:
             botao.grid(row=4, column=0, padx=5, pady=5, columnspan=2)
 
         else:
-            #mensagem de erro: messagebox
-            pass
+            erro = messagebox.showerror('Erro','Preencha todos os campos')
         
     def limpar_campos(self):
         self.entrada_nome.delete(0 ,'end')
