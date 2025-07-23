@@ -6,8 +6,16 @@ class Pessoa:
         self.__senha = senha
         self.matricula = matricula
 
-        def cadastrar_pessoa(self, nome, matricula, senha):
+    def to_dict(self):
+        return{
+            'id': self.id,
+            'nome': self.nome,
+            'senha': self.__senha,
+            'matricula': self.matricula
+        }
+    
+    def cadastrar_pessoa(self, nome, matricula, senha):
             pass
 
-        def get_pessoa(self, matricula):
+    def get_pessoa(self, matricula):
             pass
