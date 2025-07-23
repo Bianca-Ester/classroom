@@ -1,7 +1,6 @@
 from tkinter import Tk, Menu
 from janelas.professor.janelas.janela_acessar_turma import JanelaAcessarTurma
-from janelas.professor.janelas.janela_criar_turma import JanelaCriarTurma
-from janelas.janela_excluir_turma import JanelaExcluirTurma
+from janelas.professor.janelas.janela_cadastrar_turma import JanelaCadastrarTurma
 from ...janela_principal import JanelaPrincipal
 
 
@@ -13,14 +12,9 @@ class JanelaPrincipalProfessor:
         self.menu_bar = Menu(self.janela)
 
         self.menu_bar.add_command(label="Acessar turma", command=self.abrir_janela_acessar_turma)
-        self.menu_bar.add_command(label="Criar turma", command=self.abrir_janela_criar_turma)
-        self.menu_bar.add_command(label="Excluir turma", command=self.abrir_janela_excluir_turma)
-
-        menu_sair = Menu(self.menu_bar, tearoff=0)
-        self.menu_bar.add_command(label="Sair", menu=menu_sair)
-        menu_sair.add_command(label="Voltar", command=self.abrir_janela_principal)
-        menu_sair.add_separator()
-        menu_sair.add_command(label="Sair", command=self.janela.quit)
+        self.menu_bar.add_command(label="Cadastrar turma", command=self.abrir_janela_cadastrar_turma)
+        self.menu_bar.add_command(label="Voltar", command=self.abrir_janela_principal)
+        self.menu_bar.add_command(label="Sair", command=self.janela.quit)
 
         self.centralizar_janela()
         self.janela.mainloop()
@@ -44,14 +38,10 @@ class JanelaPrincipalProfessor:
         self.limpar_widgets()
         JanelaAcessarTurma(self.janela)
 
-    def abrir_janela_criar_turma(self):
+    def abrir_janela_cadastrar_turma(self):
         self.limpar_widgets()
-        JanelaCriarTurma(self.janela)
+        JanelaCadastrarTurma(self.janela)
     
-    def abrir_janela_excluir_turma(self):
-        self.limpar_widgets()
-        JanelaExcluirTurma(self.janela)
-
     def abrir_janela_principal(self):
         self.limpar_widgets()
         JanelaPrincipal(self.janela)
