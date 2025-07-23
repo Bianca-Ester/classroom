@@ -1,5 +1,3 @@
-#AJUSTADO e FINALIZADO
-
 from tkinter import Tk, Menu
 from janelas.janela_cadastro import JanelaCadastro
 from janelas.janela_login import JanelaLogin
